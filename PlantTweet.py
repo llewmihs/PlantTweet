@@ -16,3 +16,4 @@ config = {}
 execfile("PlatTweet_conf.py", config)
 
 #create the twitter API object
+#test

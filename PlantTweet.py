@@ -13,7 +13,7 @@ from twython import Twython
 
 #load the config file
 config = {}
-execfile("PlatTweet_conf.py", config)
+execfile("PlantTweet_conf.py", config)
 
 #create the twitter API object
 #test

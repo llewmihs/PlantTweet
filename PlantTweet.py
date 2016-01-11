@@ -1,19 +1,43 @@
 #subprocess allows python to run commands in the terminal - 
-#this is for the DropBox upload
 import subprocess
-
-#the picamera to take the snaps!
 import picamera
-
-#time will let us take photos at different times of the day
 import time
+from twython import Twython, TwythonError
 
-#twython allows us to upload images to twitter
-from twython import Twython
+camera = picamera.PiCamera()
 
-#load the config file
+
+def image_Tweet(status_update):	#this function uploads a photo to twitter
+        photo = open('image.jpg', 'rb')
+        response = twitter.upload_media(media = photo)
+        try:
+            twitter.update_status(status = status_update, media_ids=[response['media_id']])
+        except TwythonError as e:
+            print e
+
+def snap_Photo():	#this function takes a photograph
+	camera.capture('image.jpg')
+	
+#load the config file and create the API object
 config = {}
 execfile("PlantTweet_conf.py", config)
+twitter = Twython(config["app_key"],config["app_secret"],config["oauth_token"],config["oauth_token_secret"])
 
-#create the twitter API object
-#test
+Loop = True
+
+while Loop == True:
+	hour = int(time.strftime("%H"))
+	minute = int(time.strftime("%M"))
+	second = int(time.strftime("%S"))	
+	
+	if hour % 1 == 0 and minute == 0 and second == 0:
+		snap_Photo()
+		message = "The %d o'clock image" % hour
+		image_Tweet(message)
+	
+	#time.sleep(1)
+#	Loop = False
+
+
+#snap_Photo()
+#image_Tweet()

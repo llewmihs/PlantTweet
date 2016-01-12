@@ -7,11 +7,11 @@ tweetList = [
 	"Trial often exhibits truly wonderful results.",
 	"When baffled in one direction a man of energy will not despair, but will find another way to his object.",
 	"A good opportunity is seldom presented, and is easily lost.",
-	"Father's debt, son to give back."
+	"Father's debt, son to give back.",
 	"Do not harbour intentions to hurt others.",
 	"We all have a mental list of 'I should have's'.",
 	"The one who makes trouble can resolve the trouble.",
-	"Consuming alcohol assists with removing deceit and revealing the truth."
+	"Consuming alcohol assists with removing deceit and revealing the truth.",
 	"Nothing in life is to be feared, it is only to be understood.",
 	"It is supposed that if there is a rumour, there must be some truth behind it.",
 	"Present afflictions may tend to our future good.",

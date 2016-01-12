@@ -9,21 +9,6 @@ from random_tweets import *
 camera = picamera.PiCamera()
 
 filename = ""
-#message = ""
-
-"""
-tweetList = [
-	"Two in the hand is worth one in the bush",
-	"A watched pot never boils",
-	"Destroy the seed of evil, or it will grow up to your ruin.",
-	"A small fire is soon quenched.",
-	"The Changjiang River waves behind drive the waves ahead.",
-	"Trial often exhibits truly wonderful results.",
-	"When baffled in one direction a man of energy will not despair, but will find another way to his object.",
-	"A good opportunity is seldom presented, and is easily lost.",
-	"Father's debt, son to give back."
-	]
-"""
 
 def image_Tweet(status_update):	#this function uploads a photo to twitter
         photo = open(filename, 'rb')
@@ -54,12 +39,12 @@ while Loop == True:
 	second = int(time.strftime("%S"))	
 	filename = (time.strftime("%y-%m-%d-%H-%M-%S-") + "plant.jpg")		
 	
-	if hour % 1 == 0 and minute % 1 == 0 and second % 20 == 0:
+	if hour % 1 == 0 and minute % 1 == 0 and second % 30 == 0:
 		snap_Photo()
 		image_Tweet(filename)
 		print "Tweeted: ",				
 		print filename
-		
+	#upload the file to dropbox		
 		print "Uploading image to dropbox"
 		subprocess.check_call(["/home/pi/DropBox/Dropbox-Uploader/dropbox_uploader.sh"," upload ", filename, "/"])
 		print "Upload successful"
@@ -67,4 +52,3 @@ while Loop == True:
 		time.sleep(3)
 		subprocess.check_call(["sudo","rm", filename])	
 		print "Image deleted"
-	#time.sleep(1)

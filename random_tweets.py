@@ -1,5 +1,4 @@
 tweetList = [
-	"A watched pot never boils",
 	"Destroy the seed of evil, or it will grow up to your ruin.",
 	"A small fire is soon quenched.",
 	"The Changjiang River waves behind drive the waves ahead.",

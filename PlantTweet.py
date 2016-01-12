@@ -39,7 +39,7 @@ while Loop == True:
 	second = int(time.strftime("%S"))	
 	filename = (time.strftime("%y-%m-%d-%H-%M-%S-") + "plant.jpg")		
 	
-	if hour % 1 == 0 and minute % 1 == 0 and second % 30 == 0:
+	if hour % 1 == 0 and minute % 10 == 0 and second == 0:
 		snap_Photo()
 		image_Tweet(filename)
 		print "Tweeted: ",				

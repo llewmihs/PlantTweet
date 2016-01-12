@@ -27,6 +27,7 @@ tweetList = [
 
 def image_Tweet(status_update):	#this function uploads a photo to twitter
         photo = open(filename, 'rb')
+        twitter = Twython(config["app_key"],config["app_secret"],config["oauth_token"],config["oauth_token_secret"])
         response = twitter.upload_media(media = photo)
         toTweet = tweetList[random.randint(0,len(tweetList))-1]
         print toTweet
@@ -42,7 +43,7 @@ def snap_Photo():	#this function takes a photograph
 #load the config file and create the API object
 config = {}
 execfile("PlantTweet_conf.py", config)
-twitter = Twython(config["app_key"],config["app_secret"],config["oauth_token"],config["oauth_token_secret"])
+#twitter = Twython(config["app_key"],config["app_secret"],config["oauth_token"],config["oauth_token_secret"])
 
 Loop = True
 
@@ -58,7 +59,10 @@ while Loop == True:
 		image_Tweet(filename)
 		print "Tweeted: ",				
 		print filename
-			
+		
+		print "Uploading image to dropbox"
+		subprocess.check_call(["/home/pi/DropBox/Dropbox-Uploader/dropbox_uploader.sh"," upload ", filename, "/"])
+		print "Upload successful"
 	#delete the file
 		time.sleep(3)
 		subprocess.check_call(["sudo","rm", filename])	

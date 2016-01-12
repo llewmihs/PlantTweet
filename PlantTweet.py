@@ -4,6 +4,7 @@ import picamera
 import time
 from twython import Twython, TwythonError
 import random
+import random_tweets.py
 
 camera = picamera.PiCamera()
 

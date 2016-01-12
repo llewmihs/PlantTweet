@@ -1,5 +1,4 @@
 tweetList = [
-	"Two in the hand is worth one in the bush",
 	"A watched pot never boils",
 	"Destroy the seed of evil, or it will grow up to your ruin.",
 	"A small fire is soon quenched.",

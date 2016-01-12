@@ -32,4 +32,18 @@ tweetList = [
 	"Sow thin, reap thin.",
 	"A book is like a garden carried in the pocket.",
 	"Those who scratch bottoms should not bite fingernails.",
+	"A bird does not sing because it has an answer. It sings because it has a song.",
+	"A bit of fragrance clings to the hand that gives flowers.",
+	"A child's life is like a piece of paper on which every person leaves a mark.",
+	"A diamond with a flaw is worth more than a pebble without imperfections.",
+	"A rat who gnaws at a cat's tail invites destruction",
+	"Dig the well before you are thirsty.",
+	"Be the first to the field and the last to the couch.",
+	"Deep doubts, deep wisdom; small doubts, little wisdom",
+	"Do not remove a fly from your friend's forehead with a hatchet.",
+	"He who strikes the first blow admits he's lost the argument.",
+	"Keep your broken arm inside your sleeve.",
+	"To know the road ahead, ask those coming back.",
+	"Our greatest glory is not in never falling, but in rising every time we fall.",
+	"It does not matter how slowly you go as long as you do not stop."
 	]

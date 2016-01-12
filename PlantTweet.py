@@ -11,6 +11,7 @@ camera = picamera.PiCamera()
 filename = ""
 #message = ""
 
+"""
 tweetList = [
 	"Two in the hand is worth one in the bush",
 	"A watched pot never boils",
@@ -22,6 +23,7 @@ tweetList = [
 	"A good opportunity is seldom presented, and is easily lost.",
 	"Father's debt, son to give back."
 	]
+"""
 
 def image_Tweet(status_update):	#this function uploads a photo to twitter
         photo = open(filename, 'rb')

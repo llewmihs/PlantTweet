@@ -4,7 +4,7 @@ import picamera
 import time
 from twython import Twython, TwythonError
 import random
-import random_tweets.py
+from random_tweets import *
 
 camera = picamera.PiCamera()
 
@@ -28,7 +28,7 @@ tweetList = [
 def image_Tweet(status_update):	#this function uploads a photo to twitter
         photo = open(filename, 'rb')
         response = twitter.upload_media(media = photo)
-        toTweet = tweetList[random.randint(0,len(list))-1]
+        toTweet = tweetList[random.randint(0,len(tweetList))-1]
         print toTweet
         try:
             twitter.update_status(status = toTweet, media_ids=[response['media_id']])

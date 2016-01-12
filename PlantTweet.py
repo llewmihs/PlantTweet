@@ -1,10 +1,10 @@
-#subprocess allows python to run commands in the terminal - 
-import subprocess
-import picamera
+#Welcome to the Think Physics office plant twitter account code.
+import subprocess		#Subprocess allows the programme to run command in the terminal
+import picamera	
 import time
 from twython import Twython, TwythonError
 import random
-from random_tweets import *
+from random_tweets import *	#Import the list of quotes
 
 camera = picamera.PiCamera()
 
@@ -25,25 +25,29 @@ def snap_Photo():	#this function takes a photograph
 	camera.capture(filename)
 	time.sleep(4)
 
-#load the config file and create the API object
+#load the config file 
 config = {}
 execfile("PlantTweet_conf.py", config)
-#twitter = Twython(config["app_key"],config["app_secret"],config["oauth_token"],config["oauth_token_secret"])
 
-Loop = True
+#Loop = True
 
-# safe code below
-while Loop == True:
+#while Loop == True:
+while True:
 	hour = int(time.strftime("%H"))
 	minute = int(time.strftime("%M"))
 	second = int(time.strftime("%S"))	
 	filename = (time.strftime("%y-%m-%d-%H-%M-%S-") + "plant.jpg")		
+	
+	#if hour in range(9, 18) and minute == 0 and second == 0:
 	
 	if hour % 1 == 0 and minute % 10 == 0 and second == 0:
 		snap_Photo()
 		image_Tweet(filename)
 		print "Tweeted: ",				
 		print filename
+		if hour == 12:
+			avatar = open(filename, 'rb')
+			twitter.update_profile_image(image=avatar)
 	#upload the file to dropbox		
 		print "Uploading image to dropbox"
 		subprocess.check_call(["/home/pi/DropBox/Dropbox-Uploader/dropbox_uploader.sh"," upload ", filename, "/"])

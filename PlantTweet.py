@@ -7,10 +7,15 @@ from twython import Twython, TwythonError
 camera = picamera.PiCamera()
 
 filename = ""
-message = ""
+#message = ""
+
+list = [
+	"Two in the hand is worth one in the bush",
+	"A watched pot never boils"
+	]
 
 def image_Tweet(status_update):	#this function uploads a photo to twitter
-        photo = open(message, 'rb')
+        photo = open(filename, 'rb')
         response = twitter.upload_media(media = photo)
         try:
             twitter.update_status(status = status_update, media_ids=[response['media_id']])
@@ -18,7 +23,7 @@ def image_Tweet(status_update):	#this function uploads a photo to twitter
             print e
 
 def snap_Photo():	#this function takes a photograph
-	camera.capture(message)
+	camera.capture(filename)
 	time.sleep(4)
 
 #load the config file and create the API object
@@ -33,16 +38,16 @@ while Loop == True:
 	hour = int(time.strftime("%H"))
 	minute = int(time.strftime("%M"))
 	second = int(time.strftime("%S"))	
-	message = (time.strftime("%d-%m-%y %H:%M:%S ") + "plant.jpg")		
+	filename = (time.strftime("%y-%m-%d-%H-%M-%S-") + "plant.jpg")		
 	
 	if hour % 1 == 0 and minute % 1 == 0 and second % 20 == 0:
 		snap_Photo()
-		image_Tweet(message)
+		image_Tweet(filename)
 		print "Tweeted: ",				
-		print message
+		print filename
 			
 	#delete the file
 		time.sleep(3)
-		subprocess.check_call(["sudo","rm", message])	
+		subprocess.check_call(["sudo","rm", filename])	
 		print "Image deleted"
 	#time.sleep(1)

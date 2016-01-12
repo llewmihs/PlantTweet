@@ -45,5 +45,12 @@ tweetList = [
 	"Keep your broken arm inside your sleeve.",
 	"To know the road ahead, ask those coming back.",
 	"Our greatest glory is not in never falling, but in rising every time we fall.",
-	"It does not matter how slowly you go as long as you do not stop."
+	"It does not matter how slowly you go as long as you do not stop.",
+	"Everything has beauty, but not everyone sees it.",
+	"Friendship is one mind in two bodies.",
+	"When I let go of what I am, I become what I might be.",
+	"Love is of all passions the strongest, for it attacks simultaneously the head, the heart and the senses.",
+	"Real knowledge is to know the extent of one's ignorance.",
+	"Before you embark on a journey of revenge, dig two graves.",
+	"Do not impose on others what you yourself do not desire."
 	]

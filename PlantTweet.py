@@ -3,22 +3,32 @@ import subprocess
 import picamera
 import time
 from twython import Twython, TwythonError
+import random
 
 camera = picamera.PiCamera()
 
 filename = ""
 #message = ""
 
-list = [
+tweetList = [
 	"Two in the hand is worth one in the bush",
-	"A watched pot never boils"
+	"A watched pot never boils",
+	"Destroy the seed of evil, or it will grow up to your ruin.",
+	"A small fire is soon quenched.",
+	"The Changjiang River waves behind drive the waves ahead.",
+	"Trial often exhibits truly wonderful results.",
+	"When baffled in one direction a man of energy will not despair, but will find another way to his object.",
+	"A good opportunity is seldom presented, and is easily lost.",
+	"Father's debt, son to give back."
 	]
 
 def image_Tweet(status_update):	#this function uploads a photo to twitter
         photo = open(filename, 'rb')
         response = twitter.upload_media(media = photo)
+        toTweet = tweetList[random.randint(0,len(list))-1]
+        print toTweet
         try:
-            twitter.update_status(status = status_update, media_ids=[response['media_id']])
+            twitter.update_status(status = toTweet, media_ids=[response['media_id']])
         except TwythonError as e:
             print e
 

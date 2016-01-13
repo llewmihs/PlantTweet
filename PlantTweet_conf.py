@@ -1,6 +1,6 @@
 #Details for Twitter
 
-app_key = "***" # "INSERT APP KEY HERE"
-app_secret ="***" # "INSERT APP SECRET KEY HERE"
-oauth_token ="***" #"INSERT OAUTH TOKEN HERE"
-oauth_token_secret ="***" #"INSERT OAUTH TOEKN SECRET HERE"
+app_key = "Zra7ZZ8xLAODpaI5sVqBUsdf3" # "INSERT APP KEY HERE"
+app_secret ="5s38TTmLICKzrrjJB5wM0Ihbu8xLfyd7K09k9dPFctcGXZ1eq0" # "INSERT APP SECRET KEY HERE"
+oauth_token ="4775522061-QxZPZjElLAT4dpAxHQG0CgprVkzJnbLBxMcKmYc" #"INSERT OAUTH TOKEN HERE"
+oauth_token_secret ="wqBd4PVN5APKIZSu9hSU9g7dLDJIi7TKUqiz46mRh7Pab" #"INSERT OAUTH TOEKN SECRET HERE"

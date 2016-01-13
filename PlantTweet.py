@@ -28,26 +28,22 @@ def snap_Photo():	#this function takes a photograph
 #load the config file 
 config = {}
 execfile("PlantTweet_conf.py", config)
-
-#Loop = True
-
-#while Loop == True:
-while True:
-	hour = int(time.strftime("%H"))
-	minute = int(time.strftime("%M"))
-	second = int(time.strftime("%S"))	
-	filename = (time.strftime("%y-%m-%d-%H-%M-%S-") + "plant.jpg")		
 	
-	if (hour in range(8, 18) and minute == 0 and second == 0):
-		snap_Photo()
-		image_Tweet(filename)
-		print "Tweeted: ",				
-		print filename
+hour = int(time.strftime("%H"))	
+filename = (time.strftime("%y-%m-%d-%H-%M-%S-") + "plant.jpg")		
+	
+if hour in range(8, 18):
+	snap_Photo()
+	image_Tweet(filename)
+	print "Tweeted: ",				
+	print filename
 	#upload the file to dropbox		
-		print "Uploading image to dropbox"
-		subprocess.check_call(["/home/pi/DropBox/Dropbox-Uploader/dropbox_uploader.sh"," upload ", filename, "/"])
-		print "Upload successful"
+	print "Uploading image to dropbox"
+	subprocess.check_call(["/home/pi/DropBox/Dropbox-Uploader/dropbox_uploader.sh"," upload ", filename, "/"])
+	print "Upload successful"
 	#delete the file
-		time.sleep(3)
-		subprocess.check_call(["sudo","rm", filename])	
-		print "Image deleted"
+	time.sleep(3)
+	subprocess.check_call(["sudo","rm", filename])	
+	print "Image deleted"
+	
+	
